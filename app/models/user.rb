@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :icon_image, ImageUploader
   has_many :pictures
   has_many :likes, dependent: :destroy
   has_many :like_pictures, through: :likes, source: :picture
