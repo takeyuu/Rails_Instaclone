@@ -1,1 +1,13 @@
-<%= image_tag @user.icon_image.url, size: "50x50",  class: "icon" %>
+<div class="container">
+  <div class="user-area">
+    <div class="">
+      <%= image_tag @user.icon_image.icon.url,  class: "icon" %>
+    </div>
+  </div>
+  <nav class="content-nav">
+    <ul>
+      <li><a class="nav-link" href="#">あなたの投稿</a></li>
+      <li><a class="nav-link" href="#">いいね！した写真</a></li>
+    </ul>
+  </nav>
+</div>
