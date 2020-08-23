@@ -1,0 +1,24 @@
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+  <div class="main container">
+    <div class="row">
+      <h2 class="col-md-7 title">Log in</h2>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-7">
+        <%= f.label :content, 'メールアドレス', class: "control-label" %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-7">
+        <%= f.label :password, 'パスワード', class: "control-label" %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group submit col-md-7">
+        <%= f.submit 'ログイン', class: "btn btn-outline-info" %>
+      </div>
+    </div>
+  </div>
+<% end %>
