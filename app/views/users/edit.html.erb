@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="content-area edit-area">
+    <div class="row">
+      <div class="edit-nav col-3">
+        <ul class="nav nav-tabs flex-column" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="item1-tab" data-toggle="tab" href="#item1" role="tab" aria-controls="item1" aria-selected="true">プロフィールの変更</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="item2-tab" data-toggle="tab" href="#item2" role="tab" aria-controls="item2" aria-selected="false">パスワードの変更</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-9">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="item1" role="tabpanel" aria-labelledby="item1-tab">
+            <%= form_with(model: @user, local: true) do |f| %>
+              <h4>プロフィール編集</h4>
+              <div class="edit-icon-area">
+                <%= image_tag @user.icon_image.icon.url, class: "icon"%>
+              </div>
+              <div class="form-group">
+                <%= f.label :icon_image, 'アイコンの変更', class: "control-label" %>
+                <div class="custom-file">
+                  <%= f.file_field :icon_image, class: "form-control file custom-file-input" %>
+                  <label class="custom-file-label" for="inputFile" data-browse="参照" >ファイルを選択(ここにドロップすることもできます)</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :name, '名前', class: "control-label" %>
+                <%= f.text_field :name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :self_introduction, '自己紹介', class: "control-label" %>
+                <%= f.text_area :self_introduction, placeholder: '自己紹介を入力してください', class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :email, 'メールアドレス', class: "control-label" %>
+                <%= f.email_field :email, value: @user.email, class: "form-control" %>
+              </div>
+              <div class="submit">
+                <%= f.submit '編集', class: "btn btn-outline-info" %>
+              </div>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="item2" role="tabpanel" aria-labelledby="item2-tab">
+            <%= form_with(model: @user, local: true) do |f| %>
+              <h4>パスワード変更</h4>
+              <div class="form-group">
+                <%= f.label :password, 'パスワード', class: "control-label" %>
+                <%= f.password_field :password, placeholder: 'パスワード6文字以上', class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :password_confirmation, 'パスワード確認', class: "control-label" %>
+                <%= f.password_field :password_confirmation, placeholder: 'もう一度パスワードを入力してください', class: "form-control" %>
+              </div>
+              <div class="submit">
+                <%= f.submit '変更', class: "btn btn-outline-info" %>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

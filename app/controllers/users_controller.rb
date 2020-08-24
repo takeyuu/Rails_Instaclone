@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :select_user, only: [:show]
+before_action :select_user, only: [:show, :edit, :update]
   def new
     @user = User.new
   end
@@ -8,6 +8,7 @@ before_action :select_user, only: [:show]
     @user = User.new(user_params)
     begin
       if @user.save
+        session[:user_id] = @user.id
         redirect_to user_path(@user.id)
       else
         flash.now[:danger] = 'エラーがあります'
@@ -20,6 +21,18 @@ before_action :select_user, only: [:show]
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to user_path(@user.id)
+    else
+      flash.now[:danger] = 'エラーがあります'
+      render :edit
+    end
   end
 
   private

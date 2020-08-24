@@ -48,21 +48,36 @@ border: 1px solid #da3c41;
 
 .form-group {
   margin: auto;
+  margin-top: 20px;
+}
+
+.control-label {
+  font-weight: bold;
 }
 
 .submit {
   text-align: center;
   padding-top: 10px;
+  margin-top: 10px;
 }
 
 .title {
   margin: auto;
 }
 
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+.content-area {
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+}
+
 .user-area {
   height: 220px;
-  margin-top: 50px;
+  display: flex;
+}
+
+.icon-area {
+  margin: 10px 30px 0 0;
 }
 
 .content-nav{
@@ -102,3 +117,108 @@ border: 1px solid #da3c41;
 .content-nav ul li a:activ{
   color: #575757;
 }
+
+.user-date {
+ display: flex;
+ margin-top: 20px;
+}
+.user-date .user-name {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.user-date .user-edit {
+  margin-top: 8px;
+}
+
+a.edit-btn {
+  border: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px 20px;
+  text-align: center;
+}
+
+.edit-area {
+  background-color: #fff;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+.edit-icon-area {
+  margin-left: 5px;
+}
+
+#item1,#item2 {
+  width: 80%;
+  margin:auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.edit-nav {
+  background-color: #fafafa;
+  padding-right: 0;
+}
+
+/* ----------------------------- */
+/* #vertical_tab_nav{
+    display: block;
+    width: 100%;
+}
+#vertical_tab_nav ul{
+    display: block;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+    width: 30%;
+  border-radius: 10px 0 0 10px;
+  background: #555;
+}
+#vertical_tab_nav li{
+    border-bottom: 1px solid #000;
+  margin-bottom: 1px;
+    text-align: left;
+    padding: 0px;
+}
+#vertical_tab_nav li:last-child{
+    margin-bottom: 0px;
+  border-bottom: 0px;
+}
+#vertical_tab_nav li a{
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    text-decoration: none;
+    padding: 7%;
+    background: #57cac9;
+  background: -webkit-linear-gradient(top,#444,#333);
+  background: -moz-linear-gradient(top,#444,#333);
+}
+#vertical_tab_nav li a.selected{
+    background: #fff;
+    color: #000;
+}
+#vertical_tab_nav div{
+    display: block;
+    float: left;
+    background: #fff;
+    background: #fff;
+    width:64%;
+    min-height: 500px;
+    padding: 10px 3% 3% 3%;
+  border-radius: 0 10px 10px 0;
+}
+#vertical_tab_nav div article{
+    display: none;
+    margin: 0px;
+    color: #555;
+
+}
+#vertical_tab_nav div article p{
+    margin: 0px 0px 20px 0px;
+} */

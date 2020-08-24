@@ -16,3 +16,10 @@
 //= require bootstrap/dist/js/bootstrap.min
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('.form-control.file.custom-file-input').on('change', function () {
+    var file = $(this).prop('files')[0];
+    $('.custom-file-label').text(file.name);
+  });
+});
