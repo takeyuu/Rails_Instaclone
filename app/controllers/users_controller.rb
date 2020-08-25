@@ -21,6 +21,7 @@ before_action :select_user, only: [:show, :edit, :update]
   end
 
   def show
+    @picture = current_user.pictures.new
   end
 
   def edit

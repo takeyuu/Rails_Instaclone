@@ -1,0 +1,28 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <%= form_with(model: @picture, url: choose_confirm) do |f| %>
+      <div class="main container">
+        <div class="form-group">
+          <%= f.label :article, 'コメント', class: "control-label" %>
+          <%= f.text_area :article, placeholder: '気持ちをシェアしよう！', class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image, '写真の投稿', class: "control-label" %>
+          <div class="custom-file">
+            <%= f.file_field :image, class: "form-control file custom-file-input", onchange: "previewImage(this);" %>
+            <label class="custom-file-label" for="inputFile" data-browse="参照" >ファイルを選択(ここにドロップすることもできます)</label>
+            <%= f.hidden_field :image_cache %>
+            <div class=preview-label><label class="control-label">ぷれびゅー</label></div>
+            <div class="picture-preview">
+              <canvas id="preview" style="max-width:200px;"></canvas>
+            </div>
+
+          </div>
+        </div>
+        <div class="submit modal-submit">
+          <%= f.submit '投稿', class: "btn btn-outline-info" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

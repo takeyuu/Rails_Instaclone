@@ -6,5 +6,5 @@ class Picture < ApplicationRecord
   has_many :coments, dependent: :destroy
   has_many :coment_users, through: :coments, source: :user
   validates :image, presence: true
-  validates :articla, presence: true
+  validates :article, presence: true
 end

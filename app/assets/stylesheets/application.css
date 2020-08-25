@@ -61,6 +61,10 @@ border: 1px solid #da3c41;
   margin-top: 10px;
 }
 
+.modal-submit {
+  margin-bottom: 10px;
+}
+
 .title {
   margin: auto;
 }
@@ -103,7 +107,7 @@ border: 1px solid #da3c41;
   height: 100%;
   padding: 10px 0;
   text-decoration: none;
-  color: #aaa;
+  color: #ccc;
 }
 
 .content-nav ul li:hover{
@@ -159,8 +163,11 @@ a.edit-btn {
 }
 
 .edit-nav {
-  background-color: #fafafa;
   padding-right: 0;
+}
+
+.preview-label {
+  margin-top: 20px;
 }
 
 /* ----------------------------- */

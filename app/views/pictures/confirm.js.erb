@@ -1,0 +1,7 @@
+<% if @status == 'success' %>
+  $("#user-modal").modal("hide");
+  $("#user-modal2").html("<%= escape_javascript(render 'confirm') %>");
+  $("#user-modal2").modal("show");
+<% elsif @status == 'fail' %>
+  alert('error!');
+<% end %>

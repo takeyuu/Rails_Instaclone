@@ -14,7 +14,6 @@
 //= require activestorage
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.min
-//= require turbolinks
 //= require_tree .
 
 $(function() {
@@ -23,3 +22,27 @@ $(function() {
     $('.custom-file-label').text(file.name);
   });
 });
+
+$(function() {
+  $('.inp').on('change', function () {
+    var file = $(this).prop('files')[0];
+    $('.lab').text(file.name);
+  });
+});
+
+function previewImage(obj)
+{
+	var fileReader = new FileReader();
+	fileReader.onload = (function() {
+		var canvas = document.getElementById('preview');
+		var ctx = canvas.getContext('2d');
+		var image = new Image();
+		image.src = fileReader.result;
+		image.onload = (function () {
+			canvas.width = image.width;
+			canvas.height = image.height;
+			ctx.drawImage(image, 0, 0);
+		});
+	});
+	fileReader.readAsDataURL(obj.files[0]);
+}
