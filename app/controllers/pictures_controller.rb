@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :select_picture, only: [:edit, :update, :destroy]
   def new
     @picture = current_user.pictures.new
   end
@@ -9,12 +10,8 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.invalid?
-        # format.html { render template: "users/show" }
-        # format.json { render json: @picture.errors, status: :unprocessable_entity }
         format.js { @status = "fail" }
       else
-        # format.html { render template: "users/show" }
-        # format.json { render template: "users/show", status: :created, location: @user }
         format.js { @status = "success" }
       end
     end
@@ -30,8 +27,15 @@ class PicturesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
   def picture_params
     params.require(:picture).permit(:article, :image, :image_cache)
+  end
+
+  def select_picture
+    @picture = Picture.find(params[:id])
   end
 end

@@ -14,4 +14,8 @@ module PicturesHelper
   def confirm_form_method
     @picture.id ? 'patch' : 'post'
   end
+
+  def select_picture
+    @picture = Picture.find(params[:id])
+  end
 end
