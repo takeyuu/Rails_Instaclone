@@ -174,7 +174,6 @@ a.edit-btn {
   margin-top: 20px;
 }
 
-
 .nav-tabs-underline {
   border-width: 2px;
 }
@@ -247,17 +246,41 @@ a.edit-btn {
 }
 
 .show-modal {
-  max-width: 700px;
+  max-width: 900px;
 }
 
 .show-card {
   margin-top: 0px;
   border: 0px;
+  height: 600px;
+  width: 900px;
+}
+
+.show-body {
+  height: 600px;
+  width: 900px;
 }
 
 .show-img {
+  max-height: 600px;
+  max-width: 600px;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
+
+}
+
+.edit-img-form {
+  margin-top: 10px;
+  max-height: 400px;
+}
+
+.card-article {
+height: 370px;
+}
+
+.footer-btn {
+  display: flex;
+  justify-content: space-between;
 }

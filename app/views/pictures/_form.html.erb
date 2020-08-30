@@ -12,10 +12,19 @@
             <%= f.file_field :image, class: "form-control file custom-file-input", onchange: "previewImage(this);" %>
             <label class="custom-file-label" for="inputFile" data-browse="参照" >ファイルを選択(ここにドロップすることもできます)</label>
             <%= f.hidden_field :image_cache %>
-            <div class=preview-label><label class="control-label">ぷれびゅー</label></div>
-            <div class="picture-preview">
-              <canvas id="preview" style="max-width:200px;"></canvas>
+            <div class="edit-img-form overflow-auto">
+              <% if @picture.image? %>
+              <div class=preview-label><label class="control-label">今の写真</label></div>
+              <div class="now-img">
+                <%= image_tag @picture.image.url, size: '200x200' %>
+              </div>
+              <% end %>
+              <div class=preview-label><label class="control-label">ぷれびゅー</label></div>
+              <div class="picture-preview">
+                <canvas id="preview" style="max-width:200px;"></canvas>
+              </div>
             </div>
+
 
           </div>
         </div>

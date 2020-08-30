@@ -2,7 +2,7 @@
   <div class="modal-content">
     <div class="main container">
       <h2>この内容で投稿しますか？</h2>
-        <%= form_with(model: @picture, local: true ,url: confirm_new_or_edit, method: confirm_form_method) do |f| %>
+        <%= form_with(model: @picture, url: pictures_path, local: true ) do |f| %>
           <div class="form-group">
             <%= f.hidden_field :article %>
             <%= f.hidden_field :image_cache %>

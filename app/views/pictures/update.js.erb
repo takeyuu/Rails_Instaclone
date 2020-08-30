@@ -1,7 +1,6 @@
 <% if @status == 'success' %>
   $("#user-modal").modal("hide");
-  $("#user-modal2").html("<%= escape_javascript(render 'confirm') %>");
-  $("#user-modal2").modal("show");
+  window.location.replace('<%= user_path(current_user.id) %>');
 <% elsif @status == 'fail' %>
   alert('コメントと写真両方必要です！');
 <% end %>

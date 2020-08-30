@@ -8,14 +8,16 @@
         <div class="user-name">
           <h2><%= @user.name %></h2>
         </div>
-        <div class="user-edit">
-          <%= link_to edit_user_path(@user.id), class: "btn edit-btn" do %>
-            <i class="fas fa-cog">プロフィール編集</i>
-          <% end %>
-        </div>
-        <div class="">
-          <%= link_to '写真を投稿', new_picture_path, remote: true %>
-        </div>
+        <% if @user.id == current_user.id %>
+          <div class="user-edit">
+            <%= link_to edit_user_path(@user.id), class: "btn edit-btn" do %>
+              <i class="fas fa-cog">プロフィール編集</i>
+            <% end %>
+          </div>
+          <div class="">
+            <%= link_to '写真を投稿', new_picture_path, remote: true %>
+          </div>
+        <% end %>
       </div>
     </div>
     <div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
@@ -23,7 +25,7 @@
 
     <nav class="content-nav">
       <ul class="nav nav-tabs nav-tabs-underline flex-lg-row" role="tablist">
-        <li class="nav-item show-item"><a class="nav-link active" id="post-tab" data-toggle="tab" href="#post" role="tab" aria-controls="post" aria-selected="true">あなたの投稿</a></li>
+        <li class="nav-item show-item"><a class="nav-link active" id="post-tab" data-toggle="tab" href="#post" role="tab" aria-controls="post" aria-selected="true">投稿一覧</a></li>
         <li class="nav-item show-item"><a class="nav-link" id="like-tab" data-toggle="tab" href="#like" role="tab" aria-controls="like" aria-selected="false">いいね！した写真</a></li>
       </ul>
     </nav>
@@ -35,7 +37,7 @@
             <div class="col-md-4 col-4 pearent-card">
               <div class="card index-card">
                 <%= link_to picture_path(picture.id), remote: true do %>
-                  <%= image_tag picture.image.post.url, class: "bd-placeholder-img card-img img-fluid index-img" %>
+                  <%= image_tag picture.image.post.url, class: "bd-placeholder-img card-img img-fluid index-img" if picture.image? %>
                 <% end %>
                 </div>
               </div>
@@ -43,6 +45,7 @@
         </div>
       </div>
       <div id="picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+      <div id="picture-edit-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
       <div class="tab-pane fade" id="like" role="tabpanel" aria-labelledby="like-tab">
         い
       </div>
