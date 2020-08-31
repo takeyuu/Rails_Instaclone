@@ -48,21 +48,13 @@
       <div id="picture-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
       <div id="picture-edit-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
-      <div class="tab-pane fade" id="like" role="tabpanel" aria-labelledby="like-tab">
-        <div class="tab-pane fade show" id="like" role="tabpanel" aria-labelledby="post-tab">
-          <div class="row">
-            <% @user.pictures.order(created_at: :desc).each do |picture| %>
-              <div class="col-md-4 col-4 pearent-card">
-                <div class="card index-card">
-                  <%= link_to picture_path(picture.id), remote: true do %>
-                    <%= image_tag picture.image.post.url, class: "bd-placeholder-img card-img img-fluid index-img" if picture.image? %>
-                  <% end %>
-                  </div>
-                </div>
-            <% end %>
-          </div>
+      <!-- <div class="tab-pane fade" id="like" role="tabpanel" aria-labelledby="like-tab"> -->
+      <div class="tab-pane fade show" id="like" role="tabpanel" aria-labelledby="post-tab">
+        <div class="row" id="like-p">
+          <%= render partial: "pictures/like_pictures", locals: { user: @user } %>
         </div>
       </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>

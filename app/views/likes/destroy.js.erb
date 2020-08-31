@@ -1,1 +1,2 @@
 $("#like-<%= @picture.id %>").html("<%= j(render partial: 'likes/like', locals: { picture: @picture }) %>");
+$("#like-p").html("<%= j(render partial: 'pictures/like_pictures', locals: { user: @user }) %>");

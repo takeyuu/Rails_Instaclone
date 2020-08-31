@@ -1,0 +1,9 @@
+<% user.like_pictures.order(created_at: :desc).each do |picture| %>
+  <div class="col-md-4 col-4 pearent-card">
+    <div class="card index-card">
+      <%= link_to picture_path(picture.id), remote: true do %>
+        <%= image_tag picture.image.post.url, class: "bd-placeholder-img card-img img-fluid index-img" %>
+      <% end %>
+      </div>
+    </div>
+<% end %>
