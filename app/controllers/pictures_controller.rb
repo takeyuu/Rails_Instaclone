@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :select_picture, only: [:edit, :update, :destroy]
+  before_action :select_picture, only: [:show, :edit, :update, :destroy]
   def new
     @picture = current_user.pictures.new
   end

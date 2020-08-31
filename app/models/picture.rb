@@ -7,4 +7,7 @@ class Picture < ApplicationRecord
   has_many :coment_users, through: :coments, source: :user
   validates :image, presence: true, on: :create
   validates :article, presence: true
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
 end

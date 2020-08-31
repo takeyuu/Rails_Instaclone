@@ -1,0 +1,10 @@
+<% if @picture.like_user(current_user.id) %>
+  <%= link_to picture_like_path(picture_id: @picture.id, id: @picture.likes[0].id), method: :delete, remote: true do %>
+    <i class="fas fa-heart icon-btn liked"></i>
+  <% end %>
+<% else %>
+  <%= link_to picture_likes_path(@picture.id), method: :post, remote: true do %>
+    <i class="fas fa-heart icon-btn not-like"></i>
+  <% end %>
+<% end %>
+<span><%= @picture.likes_count %></span>

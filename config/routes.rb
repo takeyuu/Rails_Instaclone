@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     member do
       patch :confirm
     end
+    resources :likes, only: [:create, :destroy]
   end
 end

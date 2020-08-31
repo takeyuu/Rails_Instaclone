@@ -25,6 +25,10 @@ header {
   line-height: 2.6;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
  .flash_message {
   color: #fff;
   text-align: center;
@@ -283,4 +287,12 @@ height: 370px;
 .footer-btn {
   display: flex;
   justify-content: space-between;
+}
+
+.liked {
+  color: #fc65b2;
+}
+
+.not-like {
+  color: #ccc;
 }
