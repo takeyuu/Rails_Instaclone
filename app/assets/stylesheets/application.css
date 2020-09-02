@@ -144,6 +144,19 @@ a.edit-btn {
   margin-bottom: 20px;
 }
 
+.edit-tabs .nav-item.show .nav-link, .edit-tabs .nav-link {
+  border: none;
+}
+
+.edit-tabs .nav-item.show .nav-link, .edit-tabs .nav-link.active {
+  color: #fff;
+  background-color: #ffd6d6;
+}
+
+.edit-tabs .nav-item.show .nav-link, .edit-tabs .nav-link:hover {
+  border: none;
+}
+
 .edit-nav {
   padding-right: 0;
 }
