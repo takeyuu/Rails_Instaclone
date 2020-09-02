@@ -100,8 +100,11 @@ border: 1px solid #da3c41;
  width: 600px;
 }
 .user-date .user-name {
-  font-size: 30px;
   margin-right: 10px;
+}
+
+.user-name h2 {
+  font-size: 40px;
 }
 
 .user-date .user-edit {
@@ -115,6 +118,7 @@ border: 1px solid #da3c41;
 .plofile {
   margin-top: 20px;
   max-height: 130px;
+  padding-left: 0;
 }
 
 a.edit-btn {
@@ -307,4 +311,17 @@ height: 380px;
   background-color: #fadddd;
   border-color: #fadddd;
   color: #fff;
+}
+
+.top-card{
+  width: 550px;
+  margin-top: 30px;
+}
+
+.top-img {
+  max-height: 600px;
+}
+
+.top-card-text {
+  margin-top: 10px;
 }

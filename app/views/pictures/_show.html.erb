@@ -2,8 +2,8 @@
   <div class="modal-content">
     <div class="card show-card">
       <div class="row no-gutters show-body">
-        <div class="col-md-7 d-flex align-items-center align-self-center">
-          <%= image_tag @picture.image.url, class: "bd-placeholder-img card-img img-fluid show-img" %>
+        <div class="col-md-7 d-flex">
+          <%= image_tag @picture.image.url, class: "bd-placeholder-img card-img show-img" %>
         </div>
         <div class="col-md-5">
           <div class="card-body">
@@ -22,7 +22,7 @@
             <p class="card-text"><small class="text-muted"><%= @picture.created_at.strftime('%Y年%m月%d日') %></small></p>
             <div class='footer-btn'>
               <div id="like-<%= @picture.id %>">
-                <%= render partial: "likes/like" %>
+                <%= render partial: "likes/like", locals: { picture: @picture } %>
               </div>
               <% if @picture.user_id == current_user.id %>
                 <div class="edit-destroy-btn">
@@ -36,7 +36,7 @@
               <% end %>
             </div>
             <div class="comment-form">
-              <%= render partial: 'coments/form', locals: { coment: @coment} %>
+              <%= render partial: 'coments/form', locals: { coment: @coment, picture: @picture} %>
             </div>
             <div class="">
 

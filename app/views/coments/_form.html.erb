@@ -1,4 +1,4 @@
-<%= form_with(modal: coment, url: picture_coments_path(@picture.id) ) do |f| %>
+<%= form_with(modal: coment, url: picture_coments_path(picture.id) ) do |f| %>
   <%= f.text_area :content, placeholder: 'コメントする', class: "input-comment" %>
   <%= f.submit "送信", class: "btn btn-outline-secondary float-right" %>
 <% end %>

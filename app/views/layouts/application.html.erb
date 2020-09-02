@@ -26,7 +26,7 @@
             <% if logged_in? %>
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <%= link_to 'Home', user_path(current_user.id), class: "nav-link" %>
+                  <%= link_to 'Home', root_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "#{current_user.name}のページ", user_path(current_user.id), class: "nav-link" %>
@@ -34,6 +34,11 @@
                 <li class="nav-item">
                   <%= link_to 'ログアウト', session_path(current_user.id), class: 'nav-link',
                       method: :delete, data: { confirm: 'ログアウトしてよろしいですか？'} %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to new_picture_path, class: 'nav-link', remote: true do %>
+                    <i class="far fa-plus-square"></i>
+                  <% end %>
                 </li>
               </ul>
             <% else %>
@@ -51,5 +56,7 @@
       </nav>
     </header>
     <%= yield %>
+    <div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+    <div id="user-modal2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
   </body>
 </html>
