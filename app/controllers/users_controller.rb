@@ -21,7 +21,6 @@ before_action :select_user, only: [:show, :edit, :update]
   end
 
   def show
-    # @like = current_user.likes.find_by(picture_id: @picture.id)
   end
 
   def edit

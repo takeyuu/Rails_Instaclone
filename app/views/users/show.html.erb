@@ -37,7 +37,7 @@
             <div class="col-md-4 col-4 pearent-card">
               <div class="card index-card">
                 <%= link_to picture_path(picture.id), remote: true do %>
-                  <%= image_tag picture.image.post.url, class: "bd-placeholder-img card-img img-fluid index-img" if picture.image? %>
+                  <%= image_tag picture.image.index.url, class: "bd-placeholder-img card-img img-fluid index-img" if picture.image? %>
                 <% end %>
                 </div>
               </div>

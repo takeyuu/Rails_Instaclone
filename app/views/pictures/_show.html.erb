@@ -8,11 +8,17 @@
         <div class="col-md-5">
           <div class="card-body">
             <div class="card-title">
-              <%= image_tag @picture.user.icon_image.mini_icon.url %>
-              <%= @picture.user.name %>
+              <%= link_to user_path(@picture.user.id) do %>
+                <%= image_tag @picture.user.icon_image.mini_icon.url %>
+                <%= @picture.user.name %>
+              <% end %>
             </div>
-            <p class="card-text card-article overflow-auto"><%= @picture.article %>ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
-            <p class="card-text like-btn"></p>
+            <div class="card-text card-article overflow-auto">
+              <p><%= @picture.article %></p>
+              <div id="comments_area">
+                <%= render partial: 'coments/index', locals: { coments: @coments } %>
+              </div>
+            </div>
             <p class="card-text"><small class="text-muted"><%= @picture.created_at.strftime('%Y年%m月%d日') %></small></p>
             <div class='footer-btn'>
               <div id="like-<%= @picture.id %>">
@@ -28,6 +34,12 @@
                   <% end %>
                 </div>
               <% end %>
+            </div>
+            <div class="comment-form">
+              <%= render partial: 'coments/form', locals: { coment: @coment} %>
+            </div>
+            <div class="">
+
             </div>
           </div>
         </div>

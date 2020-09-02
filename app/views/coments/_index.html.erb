@@ -1,0 +1,30 @@
+<% if coments.present? %>
+  <p>コメント一覧</p>
+<% end %>
+<% coments.first(2).each do |coment| %>
+<% unless coment.id.nil? %>
+  <%= link_to user_path(coment.user_id) do %>
+    <div class="comment-user">
+      <%= image_tag coment.user.icon_image.mini_icon.url %>
+      <%= coment.user.name %>
+    </div>
+  <% end %>
+  <p><%= coment.content %></p>
+<% end %>
+<% end %>
+<% if coments.length > 2 %>
+<h6 class="more" data-toggle="collapse" data-target="#picture-comments" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
+<% end %>
+<div class="collapse" id="picture-comments">
+  <% coments.offset(2).each do |coment| %>
+  <% unless coment.id.nil? %>
+    <%= link_to user_path(coment.user_id) do %>
+      <div class="comment-user">
+        <%= image_tag coment.user.icon_image.mini_icon.url %>
+        <%= coment.user.name %>
+      </div>
+    <% end %>
+    <p><%= coment.content %></p>
+  <% end %>
+  <% end %>
+</div>

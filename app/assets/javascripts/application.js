@@ -16,20 +16,6 @@
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
 
-$(function() {
-  $('.form-control.file.custom-file-input').on('change', function () {
-    var file = $(this).prop('files')[0];
-    $('.custom-file-label').text(file.name);
-  });
-});
-
-$(function() {
-  $('.inp').on('change', function () {
-    var file = $(this).prop('files')[0];
-    $('.lab').text(file.name);
-  });
-});
-
 function previewImage(obj)
 {
 	var fileReader = new FileReader();
@@ -46,3 +32,17 @@ function previewImage(obj)
 	});
 	fileReader.readAsDataURL(obj.files[0]);
 }
+
+$(function() {
+  $('.form-control.file.custom-file-input').on('change', function () {
+    var file = $(this).prop('files')[0];
+    $('.custom-file-label').text(file.name);
+  });
+});
+
+$(function() {
+  $('.inp').on('change', function () {
+    var file = $(this).prop('files')[0];
+    $('.lab').text(file.name);
+  });
+});

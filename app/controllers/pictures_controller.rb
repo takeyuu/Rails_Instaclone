@@ -30,6 +30,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @coments = @picture.coments.order(created_at: :desc)
   end
 
   def edit
