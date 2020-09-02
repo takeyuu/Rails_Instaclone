@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content-area edit-area">
     <div class="row">
-      <div class="edit-nav col-3">
+      <div class="edit-nav col-11 col-lg-3">
         <ul class="nav nav-tabs flex-column" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="item1-tab" data-toggle="tab" href="#item1" role="tab" aria-controls="item1" aria-selected="true">プロフィールの変更</a>
@@ -11,7 +11,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-9">
+      <div class="col-12 col-lg-9">
         <div class="tab-content">
           <div class="tab-pane fade show active" id="item1" role="tabpanel" aria-labelledby="item1-tab">
             <%= form_with(model: @user, local: true) do |f| %>
@@ -39,7 +39,7 @@
                 <%= f.email_field :email, value: @user.email, class: "form-control" %>
               </div>
               <div class="submit">
-                <%= f.submit '編集', class: "btn btn-outline-info" %>
+                <%= f.submit '編集', class: "btn btn-outline-secondary" %>
               </div>
             <% end %>
           </div>
@@ -55,7 +55,7 @@
                 <%= f.password_field :password_confirmation, placeholder: 'もう一度パスワードを入力してください', class: "form-control" %>
               </div>
               <div class="submit">
-                <%= f.submit '変更', class: "btn btn-outline-info" %>
+                <%= f.submit '変更', class: "btn btn-outline-secondary" %>
               </div>
             <% end %>
           </div>

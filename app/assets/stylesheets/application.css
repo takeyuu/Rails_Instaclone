@@ -32,6 +32,7 @@ a {
 
 a:hover {
   text-decoration: none;
+  color: #ffd6d6;
 }
 
  .flash_message {
@@ -85,17 +86,18 @@ border: 1px solid #da3c41;
 }
 
 .user-area {
-  height: 220px;
+  height: 300px;
   display: flex;
 }
 
 .icon-area {
-  margin: 10px 30px 0 0;
+  margin-right: 30px;
+  margin-bottom: 20px;
 }
 
 .user-date {
- display: flex;
  margin-top: 20px;
+ width: 600px;
 }
 .user-date .user-name {
   font-size: 30px;
@@ -104,6 +106,15 @@ border: 1px solid #da3c41;
 
 .user-date .user-edit {
   margin-top: 8px;
+}
+
+.new-link {
+  margin-top: 20px;
+}
+
+.plofile {
+  margin-top: 20px;
+  max-height: 130px;
 }
 
 a.edit-btn {
@@ -141,24 +152,24 @@ a.edit-btn {
   margin-top: 20px;
 }
 
-.nav-tabs-underline {
+.content-nav .nav-tabs-underline {
   border-width: 2px;
 }
 
-.nav-tabs-underline .nav-link {
+.content-nav .nav-tabs-underline .nav-link {
   border-width: 0 0 0 0;
   background-color: transparent !important;
 }
 
-.nav-tabs-underline .nav-link.active {
+.content-nav .nav-tabs-underline .nav-link.active {
   border-top: 1.5px solid #575757 ;
 }
 
-.nav-tabs-underline + .tab-content {
+.content-nav .nav-tabs-underline + .tab-content {
   border: none;
 }
 
-.nav-tabs-underline + .tab-content > .tab-pane {
+.content-nav .nav-tabs-underline + .tab-content > .tab-pane {
   background-color: transparent;
 }
 
@@ -181,7 +192,7 @@ a.edit-btn {
 
 .content-nav ul li{
   display: table-cell;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #aaa;
 }
 
 .content-nav ul li a{
@@ -190,14 +201,14 @@ a.edit-btn {
   height: 100%;
   padding: 10px 0;
   text-decoration: none;
-  color: #ccc;
+  color: #aaa;
 }
 
-.nav-link:hover{
+.content-nav .nav-link:hover{
   border-bottom: none !important;
 }
 
-.nav-tabs .nav-link {
+.content-nav .nav-tabs .nav-link {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
@@ -257,7 +268,7 @@ height: 380px;
 }
 
 .not-like {
-  color: #ccc;
+  color: #aaa;
 }
 
 .input-comment {
@@ -266,5 +277,21 @@ height: 380px;
 }
 
 .comment-form {
-  margin-top: 20px;
+  margin-top: 17px;
+}
+
+.more {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.btn-outline-secondary, .btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
+  border-color: #ffd6d6;
+  color: #ffd6d6;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary.focus, .btn-outline-secondary.disabled:hover, .btn-outline-secondary.disabled:focus, .btn-outline-secondary.disabled.focus, .btn-outline-secondary:disabled:hover, .btn-outline-secondary:disabled:focus, .btn-outline-secondary:disabled.focus {
+  background-color: #fadddd;
+  border-color: #fadddd;
+  color: #fff;
 }

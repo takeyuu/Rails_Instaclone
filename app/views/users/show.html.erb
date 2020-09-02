@@ -1,23 +1,30 @@
 <div class="container">
   <div class="content-area">
     <div class="user-area">
-      <div class="icon-area">
+      <div class="icon-area d-flex align-items-center">
         <%= image_tag @user.icon_image.icon.url,  class: "icon" %>
       </div>
       <div class="user-date">
-        <div class="user-name">
-          <h2><%= @user.name %></h2>
+        <div class="row">
+          <div class="col-xl-2 user-name">
+            <h2><%= @user.name %></h2>
+          </div>
+          <% if @user.id == current_user.id %>
+            <div class="col-xl-6 user-edit">
+              <%= link_to edit_user_path(@user.id), class: "btn edit-btn" do %>
+                <i class="fas fa-cog">プロフィール編集</i>
+              <% end %>
+            </div>
         </div>
-        <% if @user.id == current_user.id %>
-          <div class="user-edit">
-            <%= link_to edit_user_path(@user.id), class: "btn edit-btn" do %>
-              <i class="fas fa-cog">プロフィール編集</i>
+          <div class="new-link">
+            <%= link_to new_picture_path, class: "new-btn", remote: true do %>
+              <i class="fas fa-file"> 写真を投稿</i>
             <% end %>
           </div>
-          <div class="">
-            <%= link_to '写真を投稿', new_picture_path, remote: true %>
-          </div>
         <% end %>
+        <div class="plofile overflow-auto">
+          <%= @user.self_introduction %>
+        </div>
       </div>
     </div>
     <div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
