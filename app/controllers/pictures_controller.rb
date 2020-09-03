@@ -33,7 +33,7 @@ class PicturesController < ApplicationController
     @user = current_user
     if @picture.save
       redirect_to user_path(current_user.id)
-      PostMailer.post_mail(@picture).deliver
+      # PostMailer.post_mail(@picture).deliver
     else
       flash.now[:danger] = 'エラー！'
       render template: 'users/show'
