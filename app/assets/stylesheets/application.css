@@ -325,3 +325,8 @@ height: 380px;
 .top-card-text {
   margin-top: 10px;
 }
+
+.title {
+  margin-top: 20px;
+  text-align: center;
+}

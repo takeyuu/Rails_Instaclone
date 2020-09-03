@@ -36,7 +36,12 @@
                       method: :delete, data: { confirm: 'ログアウトしてよろしいですか？'} %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to new_picture_path, class: 'nav-link', remote: true do %>
+                  <%= link_to user_like_path(user_id: current_user.id, id: current_user.likes[0].id), title: 'いいね一覧', class: 'nav-link' do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to new_picture_path, title: '新規投稿', class: 'nav-link', remote: true do %>
                     <i class="far fa-plus-square"></i>
                   <% end %>
                 </li>
