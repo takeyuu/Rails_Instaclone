@@ -26,6 +26,7 @@ class PicturesController < ApplicationController
     @picture = current_user.pictures.build(picture_params)
     @user = current_user
     if @picture.save
+      PostMailer.post_mail(@picture).deliver
       redirect_to user_path(current_user.id)
     else
       flash.now[:danger] = 'エラー！'
