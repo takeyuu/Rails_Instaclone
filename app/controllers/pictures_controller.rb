@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :select_picture, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:new, :confirm, :create, :edit, :update, :destroy]
   def top
     @picture = Picture.all
   end
