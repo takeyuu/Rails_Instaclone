@@ -1,47 +1,51 @@
 <div class="container">
-  <% @picture.order(created_at: :desc).limit(30).each do |picture| %>
-  <div class="row">
-    <div class="col-12">
-      <div class="card top-card mx-auto">
-        <div class="card-body d-flex flex-row align-items-center pb-3">
-          <%= image_tag picture.user.icon_image.mini_icon.url, class: "img-avatar rounded-circle" %>
-          <div class="d-flex flex-column">
-            <%= link_to user_path(picture.user.id) do %>
-              <span class="person small ml-2"><strong><%= picture.user.name %></strong></span>
-            <% end %>
-          </div>
-        </div>
-        <%= image_tag picture.image.url, class: "bd-placeholder-img card-img img-fluid top-img" %>
-        <div class="card-body pt-0">
-          <p class="card-text top-card-text"><%= picture.article %></p>
-          <% if picture.coments.present? %>
-            <p class="more" data-toggle="collapse" data-target="#top-comments" aria-expanded="false" aria-controls="collapseExample">コメントを見る</p>
-          <% end %>
-          <div class="collapse" id="top-comments">
-            <%= render partial: "coments/index", locals: { coments: picture.coments } %>
-          </div>
-          <p class="card-text"><small class="text-muted"><%= picture.created_at.strftime('%Y年%m月%d日') %></small></p>
-          <div class='footer-btn'>
-            <div id="like-<%= picture.id %>">
-              <%= render partial: "likes/like", locals: { picture: picture } %>
-            </div>
-            <% if picture.user_id == current_user.id %>
-              <div class="edit-destroy-btn">
-                <%= link_to edit_picture_path(picture.id), remote: true do %>
-                  <i class="fas fa-edit"></i>
-                <% end %>
-                <%= link_to picture_path(picture.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか？'} do %>
-                  <i class="fas fa-trash-alt"></i>
+  <% if logged_in? %>
+    <% @picture.order(created_at: :desc).limit(30).each do |picture| %>
+      <div class="row">
+        <div class="col-12">
+          <div class="card top-card mx-auto">
+            <div class="card-body d-flex flex-row align-items-center pb-3">
+              <%= image_tag picture.user.icon_image.mini_icon.url, class: "img-avatar rounded-circle" %>
+              <div class="d-flex flex-column">
+                <%= link_to user_path(picture.user.id) do %>
+                  <span class="person small ml-2"><strong><%= picture.user.name %></strong></span>
                 <% end %>
               </div>
-            <% end %>
-          </div>
-          <div class="comment-form">
-            <%= render partial: 'coments/form', locals: { coment: picture.coments, picture: picture } %>
+            </div>
+            <%= image_tag picture.image.url, class: "bd-placeholder-img card-img img-fluid top-img" %>
+            <div class="card-body pt-0">
+              <p class="card-text top-card-text"><%= picture.article %></p>
+              <% if picture.coments.present? %>
+                <p class="more" data-toggle="collapse" data-target="#top-comments" aria-expanded="false" aria-controls="collapseExample">コメントを見る</p>
+              <% end %>
+              <div class="collapse" id="top-comments">
+                <%= render partial: "coments/index", locals: { coments: picture.coments } %>
+              </div>
+              <p class="card-text"><small class="text-muted"><%= picture.created_at.strftime('%Y年%m月%d日') %></small></p>
+              <div class='footer-btn'>
+                <div id="like-<%= picture.id %>">
+                  <%= render partial: "likes/like", locals: { picture: picture } %>
+                </div>
+                <% if picture.user_id == current_user.id %>
+                  <div class="edit-destroy-btn">
+                    <%= link_to edit_picture_path(picture.id), remote: true do %>
+                      <i class="fas fa-edit"></i>
+                    <% end %>
+                    <%= link_to picture_path(picture.id), method: :delete, data: {confirm: '本当に削除してもよろしいですか？'} do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="comment-form">
+                <%= render partial: 'coments/form', locals: { coment: picture.coments, picture: picture } %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
+  <% else %>
+    <%= render template: "users/new" %>
   <% end %>
 </div>

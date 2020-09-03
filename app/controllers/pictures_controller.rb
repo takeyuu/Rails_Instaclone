@@ -3,6 +3,11 @@ class PicturesController < ApplicationController
   before_action :authenticate_user, only: [:new, :confirm, :create, :edit, :update, :destroy]
   def top
     @picture = Picture.all
+    if logged_in?
+      @user = User.find(current_user.id)
+    else
+      @user = User.new
+    end
   end
 
   def new
