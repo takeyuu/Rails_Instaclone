@@ -1,5 +1,5 @@
 <div class="container">
-  <% @picture.order(created_at: :desc).each do |picture| %>
+  <% @picture.order(created_at: :desc).limit(30).each do |picture| %>
   <div class="row">
     <div class="col-12">
       <div class="card top-card mx-auto">
