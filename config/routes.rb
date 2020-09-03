@@ -12,6 +12,6 @@ Rails.application.routes.draw do
       patch :confirm
     end
     resources :likes, only: [:create, :destroy]
-    resources :coments, only: [:create, :destroy]
+    resources :coments, only: [:create]
   end
 end
