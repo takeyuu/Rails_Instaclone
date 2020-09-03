@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      picture: 写真
+      user: ユーザー
+      like: いいね
+      coment: コメント
+    attributes:
+      picture:
+        article: 記事
+        image: 写真
+      user:
+        self_introduction: 自己紹介
+        name: 名前
+        email: メールアドレス
+        icon_image: アイコンイメージ
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+      coment:
+        content: コメント
